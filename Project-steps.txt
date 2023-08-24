@@ -1,0 +1,54 @@
+https://www.youtube.com/watch?v=5Gqq_oAhp6Y&ab_channel=DiamilTechLab
+https://www.youtube.com/watch?v=HViLTaLQ1AQ&list=PLxEJ5uJLOPDys4MgOz78lci7e7g5GoolQ&index=1&ab_channel=YoanDev
+
+PRE-REQUIS
+Projet symfony via composer
+1- installer composer (si pas encore installer)
+	https://getcomposer.org/download/
+2- taper en ligne de commande
+	composer create-project symfony/skeleton:"5.4.*" Symfony5_portfolio
+3- ajouter un read.me au dossier 
+4- installer symfony-cli avec scoop
+	Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+	scoop install symfony-cli
+
+5- dockerize mysql database
+	run composer install
+	run composer require symfony/maker-bundle --dev
+	run symfony console make:docker:database
+6-dockerize mailer for mail sending
+	add to docker-compose.yaml file
+		mailer:
+   		 image: schickling/mailcatcher
+   		 ports: [1025, 1080]
+
+7- to run containers (docker-compose.yaml services)
+	launch docker application
+	type docker-compose up -d
+	a container of each docker-compose file should have been run
+
+8- run the project from symfony internal server
+	symfony serve -d or symfony serve:start / Then symfony serve:stop
+9- add symfony debug tolbar if not exist
+	composer require profiler --dev
+
+You should note from the debug tolbar sf server that each related docker container is up
+
+10- Create database
+	User
+	symfony console make:User
+	run composer reuqire security (if asked)
+	run composer require orm
+11- customize new created entity if needed
+	symfony console make:entity
+12- migrate database
+	symfony console make:migration
+	
+13- Apply the migration physically into database
+	symfony console doctrine:migrations:migrate
+	symfony console d:m:m
+
+14- Generate entity test-file
+	symfony console make:unit-test
+	If attempted to run class TestCase run:
+	composer require --dev phpunit/phpunit symfony/test-pack  or install phpunit as pre-requis php bin/phpunit 
