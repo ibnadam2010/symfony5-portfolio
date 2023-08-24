@@ -51,4 +51,6 @@ You should note from the debug tolbar sf server that each related docker contain
 14- Generate entity test-file
 	symfony console make:unit-test
 	If attempted to run class TestCase run:
-	composer require --dev phpunit/phpunit symfony/test-pack  or install phpunit as pre-requis php bin/phpunit 
+	composer require --dev phpunit/phpunit symfony/test-pack  or install phpunit as pre-requis php bin/phpunit
+15- Play test
+	php bin/phpunit --testdox 
