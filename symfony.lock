@@ -119,6 +119,7 @@
             "./tests/bootstrap.php"
         ]
     },
+
     "symfony/routing": {
         "version": "5.4",
         "recipe": {
@@ -132,6 +133,7 @@
             "./config/routes.yaml"
         ]
     },
+
     "symfony/security-bundle": {
         "version": "5.4",
         "recipe": {
