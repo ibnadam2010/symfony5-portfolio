@@ -9,7 +9,7 @@ Projet symfony via composer
 	composer create-project symfony/skeleton:"5.4.*" Symfony5_portfolio
 3- ajouter un read.me au dossier 
 4- installer symfony-cli avec scoop
-	Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+	on poweshell run: Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
 	scoop install symfony-cli
 
 5- dockerize mysql database
@@ -58,6 +58,29 @@ You should note from the debug tolbar sf server that each related docker contain
 	-Categorie
 	create : symfony console make:entity
 	migration : symfony console make:migration
-	apply migration : symfony console doctrine:migrations:migrate / symfony console d:m:m
+	apply migration to create table in database : symfony console doctrine:migrations:migrate / symfony console d:m:m
+	create testUnit for categorie entity
+	symfony console make:unit-test
+	execute test unit php bin/phpunit --test-dox
+
+
+	-Peinture
+
+		create : symfony console make:entity
+		migration : symfony console make:migration
+		apply migration to create table in database : symfony console doctrine:migrations:migrate / symfony console d:m:m
+		create testUnit for peinture entity
+		symfony console make:unit-test
+		execute test unit php bin/phpunit --test-dox
+
+11- define relation between entities
+
+	-Peinture
+	create : symfony console make:entity
+	Which entity? Peinture
+	Type ? relation
+
+	
+
 	
 	
