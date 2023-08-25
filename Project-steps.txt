@@ -1,6 +1,3 @@
-https://www.youtube.com/watch?v=5Gqq_oAhp6Y&ab_channel=DiamilTechLab
-https://www.youtube.com/watch?v=HViLTaLQ1AQ&list=PLxEJ5uJLOPDys4MgOz78lci7e7g5GoolQ&index=1&ab_channel=YoanDev
-
 PRE-REQUIS
 Projet symfony via composer
 1- installer composer (si pas encore installer)
