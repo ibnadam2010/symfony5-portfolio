@@ -35,22 +35,29 @@ Projet symfony via composer
 You should note from the debug tolbar sf server that each related docker container is up
 
 10- Create database
-	User
+	-User
 	symfony console make:User
 	run composer reuqire security (if asked)
 	run composer require orm
-11- customize new created entity if needed
+    customize new created entity if needed
 	symfony console make:entity
-12- migrate database
+    migrate database
 	symfony console make:migration
 	
-13- Apply the migration physically into database
+    Apply the migration physically into database
 	symfony console doctrine:migrations:migrate
 	symfony console d:m:m
 
-14- Generate entity test-file
+    Generate entity test-file
 	symfony console make:unit-test
 	If attempted to run class TestCase run:
 	composer require --dev phpunit/phpunit symfony/test-pack  or install phpunit as pre-requis php bin/phpunit
-15- Play test
+    Play test
 	php bin/phpunit --testdox 
+
+	-Categorie
+	create : symfony console make:entity
+	migration : symfony console make:migration
+	apply migration : symfony console doctrine:migrations:migrate / symfony console d:m:m
+	
+	
