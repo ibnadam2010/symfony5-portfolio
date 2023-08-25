@@ -1,0 +1,83 @@
+PRE-REQUIS
+Projet symfony via composer
+1- installer composer (si pas encore installer)
+	https://getcomposer.org/download/
+2- taper en ligne de commande
+	composer create-project symfony/skeleton:"5.4.*" Symfony5_portfolio
+3- ajouter un read.me au dossier 
+4- installer symfony-cli avec scoop
+	on poweshell run: Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+	scoop install symfony-cli
+
+5- dockerize mysql database
+	run composer install
+	run composer require symfony/maker-bundle --dev
+	run symfony console make:docker:database
+6-dockerize mailer for mail sending
+	add to docker-compose.yaml file
+		mailer:
+   		 image: schickling/mailcatcher
+   		 ports: [1025, 1080]
+
+7- to run containers (docker-compose.yaml services)
+	launch docker application
+	type docker-compose up -d
+	a container of each docker-compose file should have been run
+
+8- run the project from symfony internal server
+	symfony serve -d or symfony serve:start / Then symfony serve:stop
+9- add symfony debug tolbar if not exist
+	composer require profiler --dev
+
+You should note from the debug tolbar sf server that each related docker container is up
+
+10- Create database
+	-User
+	symfony console make:User
+	run composer reuqire security (if asked)
+	run composer require orm
+    customize new created entity if needed
+	symfony console make:entity
+    migrate database
+	symfony console make:migration
+	
+    Apply the migration physically into database
+	symfony console doctrine:migrations:migrate
+	symfony console d:m:m
+
+    Generate entity test-file
+	symfony console make:unit-test
+	If attempted to run class TestCase run:
+	composer require --dev phpunit/phpunit symfony/test-pack  or install phpunit as pre-requis php bin/phpunit
+    Play test
+	php bin/phpunit --testdox 
+
+	-Categorie
+	create : symfony console make:entity
+	migration : symfony console make:migration
+	apply migration to create table in database : symfony console doctrine:migrations:migrate / symfony console d:m:m
+	create testUnit for categorie entity
+	symfony console make:unit-test
+	execute test unit php bin/phpunit --test-dox
+
+
+	-Peinture
+
+		create : symfony console make:entity
+		migration : symfony console make:migration
+		apply migration to create table in database : symfony console doctrine:migrations:migrate / symfony console d:m:m
+		create testUnit for peinture entity
+		symfony console make:unit-test
+		execute test unit php bin/phpunit --test-dox
+
+11- define relation between entities
+
+	-Peinture
+	create : symfony console make:entity
+	Which entity? Peinture
+	Type ? relation
+
+	
+
+	
+	
