@@ -77,6 +77,40 @@ You should note from the debug tolbar sf server that each related docker contain
 	Which entity? Peinture
 	Type ? relation
 
+12- Install webpack (is a frontend tools that help to organise your project frontend)
+	give js file understandable runnable by the browser
+	download webpack dependance : composer require symfony/webpack-encore-bundle
+
+	install javascript librairies related to webpack
+		run npm install -g npm
+
+	Modify app.js to use scss instead of css
+	uncomment .enabledSassloader line in webpack.config
+	
+	npm install sass-loader@^13.0.0 sass --save-dev
+
+	npm run build
+
+13- Install postcss-loader and autoprefixer
+	npm install postcss-loader autoprefixer --dev
+
+14- Create postcss configuration file
+	postcss.config
+		module.exports = {
+  		  plugins: {
+        		autofixer: {}
+    		}
+	}
+
+15- Install bootstrap 5
+	npm install bootstrap@v5.3.1
+	npm install @popperjs/core
+	import tooltip toast popover
+	import {Tooltip, Toast, Popover} from "bootstrap";
+	import scss librairie from bootstrap
+
+	npm run build
+
 	
 
 	
