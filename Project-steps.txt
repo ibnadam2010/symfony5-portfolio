@@ -111,6 +111,9 @@ You should note from the debug tolbar sf server that each related docker contain
 
 	npm run build
 
+16- create fist controller : home
+	symfony console make:controller home
+
 	
 
 	
